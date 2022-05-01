@@ -146,17 +146,10 @@ else
 fi
 
 
-
-
-
-
-echo "$permanent"
-
 # if a permanent deletion, rm -rf
 # else move to trash
 if [[ "$permanent" -eq 1 ]]
 then
-    echo "permanent"
     echo "$cminutes $chours $cdays $cmonths * $cyears rm -rf -R $HOME/Desktop/* > /dev/null" >> /usr/lib/dtClear/mycron;
 else
     echo "$cminutes $chours $cdays $cmonths * $cyears mv $HOME/Desktop/* $HOME/.local/share/Trash/files/ > /dev/null" >> /usr/lib/dtClear/mycron;
